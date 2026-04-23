@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Mi Carta 💌</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: white;
+    color: #222;
+    transition: 0.4s;
+    overflow-x: hidden;
+}
+
+/* 🔐 PANTALLA DE ACCESO */
+#acceso {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+#display {
+    font-size: 24px;
+    letter-spacing: 8px;
+    margin: 10px;
+    padding: 10px;
+    border: 2px solid #007bff;
+    width: 160px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.teclado {
+    display: grid;
+    grid-template-columns: repeat(3, 60px);
+    gap: 10px;
+}
+
+.teclado button {
+    padding: 15px;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background: #007bff;
+    color: white;
+}
+
+.teclado button:hover {
+    background: #0056b3;
+}
+
+/* 🌙 MODO OSCURO */
+.oscuro {
+    background: #0f0f0f;
+    color: white;
+}
+
+/* 📦 CONTENEDOR */
+.caja {
+    max-width: 750px;
+    margin: auto;
+    padding: 20px;
+    display: none;
+}
+
+/* 🖼️ FOTO */
+.foto {
+    width: 200px;
+    border-radius: 15px;
+    margin-top: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* 💌 CARTA */
+.carta {
+    text-align: left;
+    white-space: pre-line;
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 15px;
+    background: rgba(0,0,0,0.05);
+}
+
+.oscuro .carta {
+    background: rgba(255,255,255,0.08);
+}
+
+/* 🔘 BOTONES */
+button {
+    padding: 10px 14px;
+    margin: 6px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background: #007bff;
+    color: white;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+/* ❤️ CORAZONES */
+.heart {
+    position: fixed;
+    bottom: -10vh;
+    font-size: 20px;
+    color: rgba(255, 0, 80, 0.7);
+    animation: floatUp linear infinite;
+}
+
+@keyframes floatUp {
+    0% { transform: translateY(0) scale(0.5); opacity: 0; }
+    20% { opacity: 1; }
+    100% { transform: translateY(-120vh) scale(1.2); opacity: 0; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- 🔐 ACCESO -->
+<div id="acceso">
+    <h2>🔐 Ingresa la contraseña</h2>
+
+    <div id="display"></div>
+
+    <div class="teclado">
+        <button onclick="agregar('1')">1</button>
+        <button onclick="agregar('0')">0</button>
+        <button onclick="borrar()">⌫</button>
+
+        <button onclick="agregar('2')">2</button>
+        <button onclick="agregar('3')">3</button>
+        <button onclick="agregar('4')">4</button>
+
+        <button onclick="agregar('5')">5</button>
+        <button onclick="agregar('6')">6</button>
+        <button onclick="agregar('7')">7</button>
+
+        <button onclick="agregar('8')">8</button>
+        <button onclick="agregar('9')">9</button>
+        <button onclick="verificar()">✔</button>
+    </div>
+</div>
+
+<!-- 💌 CONTENIDO -->
+<div class="caja" id="contenido">
+
+    <h1>💌 Mi Carta</h1>
+
+    <img class="foto" src="foto.jpg" alt="foto">
+
+    <div>
+        <button onclick="modo()">🌙 Modo oscuro</button>
+        <button onclick="ponerCristina()">🎤 Cristina</button>
+        <button onclick="ponerIris()">🎸 Iris</button>
+        <button onclick="musicaMP3()">🎵 Música</button>
+    </div>
+
+    <!-- 🎵 AUDIO -->
+    <audio id="audio">
+        <source src="musica.mp3" type="audio/mpeg">
+    </audio>
+
+    <iframe id="video"
+        width="320"
+        height="180"
+        src="https://www.youtube.com/embed/VIDEO_IRIS_GOOGOO"
+        allow="autoplay; encrypted-media"
+        allowfullscreen>
+    </iframe>
+
+    <!-- 💌 TU MENSAJE (NO TOCADO) -->
+    <div class="carta">
+📅 22 de abril del 2026
+💌 Mi Querida popiaaaaa hermosa.
+Mi amor tanto que decirte que no ocuparia una carta si no miles, mi amor te amo como a nadie he amado dejame decirte que soy muy feliz a tu lado que me llena de alegria tener a una persona tan especial ecomo vos en mi vida sos lo mas bonito que la vida me regalo mi amor cuando estoy a tu lado olvido todo esta conexion que tengo con vos es unica me siento como un niño cuando estoy con vos mi lado mas vulnerable lo saco cuando estoy con vos quiero poder darte todo lo que te mereces mi amor
+
+baby aveces me pongo a pensar todo lo que hemos vivido y hemos pasado por mucho mi amor nunca ninguno de los 2 se imagino vivir todas esas experiencias jamas pense que esa niña linda y coqueta que vi en la reunion se iba convertir en una persona muy importante en mi vida
+
+mi sofia hermosa no tenes idea de lo que significas para mi no tenes ni la mayor idea del amor que te tengo estoy en un momento que ni yo mismo entiendo como se puede llegar a amar tanto a una persona.
+
+Me recuerdo cuando hablabamos por primera vez en chat que desde el primer momento senti todo natural con vos hablarte como si te conociera de años esas platicas hasta la madrugada cuando recien nos conociamos o como cuando nos vimos por primera vez que estaba nervioso y ansioso por verte.
+
+Tambien recordar cuando te pedi si podia ser tu novio que se que en su momento no lo hice parecer especial pero no tenes idea mi amor que todo eso me salio del corazon me nacio decirte no iba con ningun plan ni nada solo surgio decirte y esuchar decirte que si para mi fue muy especial.
+
+Y por ultimo hemos pasado por tanto mi amor tantas cosas como buenas y malas hemos pasado pero nada de eso nos ha detenido en lo que queremos como pareja la vida nos puso una segunda oportunidad pienso yo que si dios no ha separado nuestros caminos es porque tiene un objetivo prometo luchar por vos siempre cuando las cosas no vayan bien prometo luchar siempre estar para vos en todo momento sea bueno o malo apoyarte incondicionalmente como novio,amigo,y lo que queras que yo sea te amo mi sofia y mil veces te amo sofia. Te amo amor de mi vida. ♡
+
+❤️❤️❤️❤️❤️❤️❤️❤️❤️
+    </div>
+
+</div>
+
+<script>
+
+let clave = "";
+
+/* teclado */
+function agregar(num){
+    clave += num;
+    document.getElementById("display").innerText = clave;
+}
+
+function borrar(){
+    clave = clave.slice(0,-1);
+    document.getElementById("display").innerText = clave;
+}
+
+/* verificar */
+function verificar(){
+    if(clave === "0110"){
+        document.getElementById("acceso").style.display = "none";
+        document.getElementById("contenido").style.display = "block";
+    } else {
+        alert("Contraseña incorrecta");
+        clave = "";
+        document.getElementById("display").innerText = "";
+    }
+}
+
+/* modo oscuro */
+function modo(){
+    document.body.classList.toggle("oscuro");
+}
+
+/* música */
+function musicaMP3(){
+    document.getElementById("audio").play();
+}
+
+/* videos */
+function ponerCristina(){
+    document.getElementById("video").src =
+    "https://www.youtube.com/embed/VIDEO_CRISTINA_YATRA";
+}
+
+function ponerIris(){
+    document.getElementById("video").src =
+    "https://www.youtube.com/embed/VIDEO_IRIS_GOOGOO";
+}
+
+/* corazones */
+function crearCorazon(){
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+
+    const simbolos = ["❤️","💖","💕","💘","💗"];
+    heart.innerHTML = simbolos[Math.floor(Math.random() * simbolos.length)];
+
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (10 + Math.random() * 25) + "px";
+    heart.style.animationDuration = (3 + Math.random() * 5) + "s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => heart.remove(), 8000);
+}
+
+setInterval(crearCorazon, 250);
+
+</script>
+
+</body>
+</html>
